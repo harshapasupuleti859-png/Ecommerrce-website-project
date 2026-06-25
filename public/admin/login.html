@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — Styli Genie</title>
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <main class="admin-login">
+    <div class="login-card">
+      <div class="logo-section">
+        <img src="/assets/logo.png" alt="Styli Genie">
+        <h1>Owner Portal</h1>
+        <p>Secure access to your store dashboard</p>
+      </div>
+      <form class="login-form" onsubmit="handleAdminLogin(event)">
+        <div class="login-error" id="login-error"></div>
+        <div class="input-group">
+          <label for="admin-username">Username</label>
+          <input type="text" id="admin-username" class="input" placeholder="Enter username" required>
+        </div>
+        <div class="input-group">
+          <label for="admin-password">Password</label>
+          <input type="password" id="admin-password" class="input" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Sign In</button>
+        <p style="text-align:center;font-size:var(--fs-xs);color:var(--text-tertiary);margin-top:var(--space-md)">
+          Default: admin / admin123
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

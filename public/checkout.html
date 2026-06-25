@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout — Styli Genie secure checkout">
+  <title>Checkout — Styli Genie</title>
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/assets/logo.png" alt="Styli Genie">
+        <span>Styli Genie</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">Home</a>
+        <a href="/products.html">Shop</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" onclick="APP.toggleTheme()">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="checkout-page">
+    <div class="container">
+      <div class="page-header">
+        <h1>Checkout</h1>
+        <p class="item-count" style="color:var(--text-secondary)">Secure checkout powered by Razorpay</p>
+      </div>
+
+      <div class="checkout-layout">
+        <!-- Form -->
+        <form class="checkout-form" onsubmit="handleCheckout(event)">
+          <div class="form-section">
+            <h3>📍 Delivery Details</h3>
+            <div class="input-group mb-md">
+              <label for="checkout-name">Full Name</label>
+              <input type="text" id="checkout-name" class="input" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group mb-md">
+              <label for="checkout-phone">Phone Number</label>
+              <input type="tel" id="checkout-phone" class="input" placeholder="10-digit mobile number" maxlength="10" required>
+            </div>
+            <div class="input-group mb-md">
+              <label for="checkout-address">Delivery Address</label>
+              <textarea id="checkout-address" class="input" rows="3" placeholder="House/flat, street, landmark, city, state" required></textarea>
+            </div>
+            <div class="form-row">
+              <div class="input-group">
+                <label for="checkout-pincode">Pincode</label>
+                <input type="text" id="checkout-pincode" class="input" placeholder="6-digit pincode" maxlength="6" required>
+              </div>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>💳 Payment</h3>
+            <div style="padding:var(--space-lg);background:var(--bg-tertiary);border-radius:var(--radius-md);display:flex;align-items:center;gap:var(--space-md)">
+              <span style="font-size:24px">🔒</span>
+              <div>
+                <div style="font-weight:600;font-size:var(--fs-sm)">Razorpay Secure Gateway</div>
+                <div style="font-size:var(--fs-xs);color:var(--text-secondary)">UPI, Cards, Net Banking, Wallets</div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-full">Place Order</button>
+        </form>
+
+        <!-- Order Summary -->
+        <div class="checkout-order-summary">
+          <div class="cart-summary" id="checkout-summary">
+            <!-- Summary rendered via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/checkout.js"></script>
+</body>
+</html>
